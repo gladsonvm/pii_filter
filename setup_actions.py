@@ -1,5 +1,4 @@
 import os
-from config_vars import directory
 
 
 def setup_dir(directory, delete_files_if_exists):

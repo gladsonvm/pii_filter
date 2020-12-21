@@ -45,3 +45,18 @@ Following are the components of the program
 - Abbreviations used:
    - WdT: Watch Directory Thread
    - CdT: Compressed Directory Thread
+   
+
+### Start Service
+
+```
+$python3 main.py 
+watchman running for /home/gladson/Desktop/pii_filter/watch_dir
+watchman running for /home/gladson/Desktop/pii_filter/todecode
+```
+
+### Run tests
+
+```buildoutcfg
+
+```
