@@ -57,6 +57,15 @@ watchman running for /home/gladson/Desktop/pii_filter/todecode
 
 ### Run tests
 
-```buildoutcfg
+```
+$python3 -m unittest tests/test_setup_actions.py 
+test_setup_action_delete_if_exists
+.test_setup_action_directory_does_not_exist
+.test_setup_action_no_delete
+.
+----------------------------------------------------------------------
+Ran 3 tests in 0.004s
+
+OK
 
 ```

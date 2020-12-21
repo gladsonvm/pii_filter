@@ -1,7 +1,7 @@
 import unittest
 from unittest import mock
 from setup_actions import setup_dir
-import sys
+
 
 class TestSetup(unittest.TestCase):
     setup_dir_param = '/pwd'
