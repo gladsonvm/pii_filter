@@ -43,5 +43,5 @@ Following are the components of the program
 ![workflow](./workflow.png?raw=true "workflow")
 
 - Abbreviations used:
-   - WdT: Working Directory Thread
+   - WdT: Watch Directory Thread
    - CdT: Compressed Directory Thread

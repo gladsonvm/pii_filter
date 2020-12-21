@@ -3,7 +3,7 @@ import time
 from config_vars import interval
 
 
-def watchman(watch_target, file_ext, response_actions):
+def watchman(watch_target, file_ext, response_actions, setup_action=None):
 	"""
 	watchman is a listener which listens to changes to all files of type file_ext in a given directory watch_target
 	watch_dir man executed chain of response actions specified in response_actions when any changes are found
@@ -11,6 +11,7 @@ def watchman(watch_target, file_ext, response_actions):
 	param file_ext: extension of files to watch_dir
 	param response_actions: chain of response actions to execute on detection of change in watch_dir target
 	"""
+
 	original_files = \
 		{item for item in os.listdir(watch_target) if os.path.isfile(watch_target+'/'+item) and
 			item.split('.')[-1] == file_ext}
@@ -25,7 +26,7 @@ def watchman(watch_target, file_ext, response_actions):
 			ra_return_value_dict = {}
 			for func_dict in response_actions:
 				ret_val = None
-				input_data =  func_dict.get('input_data')
+				input_data = func_dict.get('input_data')
 				if input_data == 'file_diff':
 					ret_val = func_dict['fn_name'](diff)
 				elif input_data:

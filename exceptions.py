@@ -1,0 +1,2 @@
+class SetupNotComplete(Exception):
+    pass

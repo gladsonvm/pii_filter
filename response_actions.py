@@ -4,7 +4,7 @@ import datetime
 import zipfile
 import pyminizip
 from pii_regex import pii_regex_list
-from config_vars import date_stamp_format, watch_dir, text_file_extension, interval, compressed_files_dir
+from config_vars import date_stamp_format, watch_dir, compressed_files_dir
 
 
 def compress_files(diff):
@@ -14,7 +14,7 @@ def compress_files(diff):
 	"""
 	compressed_files = []
 	for item in diff:
-		ctime = os.stat(item)[-1]
+		ctime = os.stat(watch_dir+'/'+item)[-1]
 		zip_filename = time.strftime('%Y_%m_%d_%H_%M_%S_%p', time.localtime(ctime)) + '.zip'
 		pyminizip.compress(watch_dir + '/' + item, None, compressed_files_dir + "/" + zip_filename, str(ctime), int(1))
 		compressed_files.append(zip_filename)
