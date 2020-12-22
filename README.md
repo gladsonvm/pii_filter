@@ -49,23 +49,26 @@ Following are the components of the program
 
 ### Start Service
 
+**cd to pii_filter** directory once this repo is cloned successfully
+
 ```
 $python3 main.py 
-watchman running for /home/gladson/Desktop/pii_filter/watch_dir
-watchman running for /home/gladson/Desktop/pii_filter/todecode
+watchman running for /path/to/pii_filter/watch_dir
+watchman running for /path/to/pii_filter/todecode
 ```
 
 ### Run tests
 
 ```
-$python3 -m unittest tests/test_setup_actions.py 
-test_setup_action_delete_if_exists
+$python3 -m unittest tests/test_*.py
+test_compress_files
+.test_extract_all
+.test_setup_action_delete_if_exists
 .test_setup_action_directory_does_not_exist
 .test_setup_action_no_delete
 .
 ----------------------------------------------------------------------
-Ran 3 tests in 0.004s
+Ran 5 tests in 0.010s
 
 OK
-
 ```
