@@ -49,6 +49,11 @@ Following are the components of the program
 
 ### Start Service
 
+ - First create a virtualenv and install and run
+   - `pip install -r requirements.txt`
+   
+`pyminizip` needs to be installed and same is used to set password to zip files.
+
 **cd to pii_filter** directory once this repo is cloned successfully
 
 ```
