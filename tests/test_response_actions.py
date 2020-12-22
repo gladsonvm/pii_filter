@@ -1,5 +1,5 @@
 import time
-from config_vars import watch_dir, compressed_files_dir, zip_file_extension
+from config_vars import watch_dir, zip_file_extension
 import unittest
 from unittest import mock
 from response_actions import compress_files, extract_all

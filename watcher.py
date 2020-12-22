@@ -36,4 +36,4 @@ def watchman(watch_target, file_ext, response_actions, setup_action=None):
 					ret_val = func_dict['fn_name']()
 				if func_dict.get('save_ret_val'):
 					ra_return_value_dict.update({func_dict['fn_name'].__name__: ret_val})
-				original_files = modified_files
+		original_files = modified_files
