@@ -3,7 +3,7 @@ from unittest import mock
 from setup_actions import setup_dir
 
 
-class TestSetup(unittest.TestCase):
+class TestSetupActions(unittest.TestCase):
     setup_dir_param = '/pwd'
     list_dir = ['a', 'b']
 
@@ -15,11 +15,11 @@ class TestSetup(unittest.TestCase):
         """
         print('{}'.format(self._testMethodName))
         os_mock.path.isdir.return_value = True
-        os_mock.listdir.return_value = TestSetup.list_dir
-        return_value = setup_dir(TestSetup.setup_dir_param, False)
+        os_mock.listdir.return_value = TestSetupActions.list_dir
+        return_value = setup_dir(TestSetupActions.setup_dir_param, False)
         assert os_mock.listdir.call_count == 1
         assert os_mock.remove.call_count == 0
-        assert return_value == TestSetup.setup_dir_param
+        assert return_value == TestSetupActions.setup_dir_param
 
     @mock.patch('setup_actions.os')
     def test_setup_action_no_delete(self, os_mock):
@@ -29,11 +29,11 @@ class TestSetup(unittest.TestCase):
         """
         print('{}'.format(self._testMethodName))
         os_mock.path.isdir.return_value = True
-        os_mock.listdir.return_value = TestSetup.list_dir
-        return_value = setup_dir(TestSetup.setup_dir_param, False)
+        os_mock.listdir.return_value = TestSetupActions.list_dir
+        return_value = setup_dir(TestSetupActions.setup_dir_param, False)
         assert os_mock.listdir.call_count == 1
         assert os_mock.remove.call_count == 0
-        assert return_value == TestSetup.setup_dir_param
+        assert return_value == TestSetupActions.setup_dir_param
 
     @mock.patch('setup_actions.os')
     def test_setup_action_directory_does_not_exist(self, os_mock):
@@ -43,11 +43,11 @@ class TestSetup(unittest.TestCase):
         """
         print('{}'.format(self._testMethodName))
         os_mock.path.isdir.return_value = True
-        os_mock.listdir.return_value = TestSetup.list_dir
-        return_value = setup_dir(TestSetup.setup_dir_param, True)
+        os_mock.listdir.return_value = TestSetupActions.list_dir
+        return_value = setup_dir(TestSetupActions.setup_dir_param, True)
         assert os_mock.listdir.call_count == 1
-        assert os_mock.remove.call_count == len(TestSetup.list_dir)
-        assert return_value == TestSetup.setup_dir_param
+        assert os_mock.remove.call_count == len(TestSetupActions.list_dir)
+        assert return_value == TestSetupActions.setup_dir_param
 
 
 if __name__ == '__main__':

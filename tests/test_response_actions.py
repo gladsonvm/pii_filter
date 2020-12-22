@@ -27,7 +27,9 @@ class TestResponseActions(unittest.TestCase):
     @mock.patch('response_actions.zipfile')
     def test_extract_all(self, zipmock):
         print('{}'.format(self._testMethodName))
-        result = extract_all(TestResponseActions.zipped_files)
-        assert len(result) == len(TestResponseActions.diff)
-        assert zipmock.ZipFile.call_count == len(TestResponseActions.diff)
+        extract_all(TestResponseActions.zipped_files)
+        assert zipmock.ZipFile.call_count == len(TestResponseActions.zipped_files)
 
+
+if __name__ == '__main__':
+    unittest.main()
